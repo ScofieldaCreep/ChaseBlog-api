@@ -30,11 +30,29 @@ app.get("/api/resources", (req, res) => {
 
 app.post("/api/resources", (req, res) => {
   const resources = getResources;
-  console.log("Data is received to post endpoint");
-  console.log(req.body);
-  res.send("Data has been received!");
+  const resource = req.body;
+  resource.createdAt = new Date();
+  resource.status = "inactive";
+  resource.id = Date.now().toString();
+  resources.unshift(resource);
+  // unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度
+  fs.writeFile(pathToFile, JSON.stringify(resources, null, 2), (error) => {
+    if (error) {
+      return res.status(422).send("Data cannot be stored!");
+    }
+    return res.send("Data has been received!");
+  });
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+});
+
+// :id 是一个动态路由参数, /api/resources/21938hkjkwqgf 会被解析为 { id: "21938hkjkwqgf" }
+app.get("/api/resources/:id", (req, res) => {
+  const resources = getResources;
+  // 也可以写成 const id = req.params.id
+  const { id } = req.params;
+  const resource = resources.find((resource) => resource.id === id);
+  res.send(resource);
 });
