@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Learning Next.js",
+    "description": "Next.js is the React framework for production - it makes building fullstack React apps and sites a breeze, and ships with built-in SSR.",
+    "link": "https://nextjs.org",
+    "priority": 1,
+    "timeToFinish": 20,
+    "status": "active"
+  },
+  {
+    "id": "2",
+    "title": "Create Next App",
+    "description": "Create Next.js apps in seconds. It ships with 'ready-to-deploy' examples using Vercel and Netlify.",
+    "link": " https://nextjs.org/docs/api-reference/create-next-app",
+    "priority": 2,
+    "timeToFinish": 40,
+    "status": "inactive"
+  },
+  {
+    "id": "3",
+    "title": "Next.js Documentation",
+    "description": "Complete documentation for Next.js. From getting started to deploying your app to production.",
+    "link": "https://nextjs.org/docs",
+    "priority": 3,
+    "timeToFinish": 120,
+    "status": "inactive"
+  },
+  {
+    "id": "4",
+    "title": "Learn Next.js",
+    "description": "An interactive Next.js tutorial that guides you through the entire process of building a production-ready application with Next.js.",
+    "link": "https://nextjs.org/learn",
+    "priority": 4,
+    "timeToFinish": 120,
+    "status": "inactive"
+  }
+]
